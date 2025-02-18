@@ -5,4 +5,6 @@ mortadela
 carne de pollo
 carne de hamburguesa
 tocino
+salsa de tomate
+salsa rosada
 pan
