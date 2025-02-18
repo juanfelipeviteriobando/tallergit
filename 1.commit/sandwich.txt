@@ -1,4 +1,8 @@
 pan
 queso
 medallón
+mortadela
+carne de pollo
+carne de hamburguesa
+tocino
 pan
