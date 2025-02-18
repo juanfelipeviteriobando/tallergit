@@ -1,0 +1,147 @@
+respuestas
+1.para empezar a usar git e iniciar el repositorio local se utiliza "git init"
+2.se utilisaria el "git reset" si se utiliza el "git reset --soft" se mueve el archivo al staging área
+3.no como tal ya que se necesita el "git add" para darle el control del archivo
+4.para agregar un archivo al repositorio local se utiliza "git add" siendo "git add -A" para agregar todo tipo e archivo
+5.se utiliza "git status" para examinar los archivos modificados o los que aun no se han agregado con git add
+6.se utiliza el comando homónimo "git commit -m "" "
+7.un commit seria el mover un archivo del staging área al repositorio local con un nombre o comentario identificatorio para después volver a ese estado seguro si algo malo pasa en el código como un equivalente a "guardar partida" para los programadores
+parte practica
+C:\Users\Udenar\trabajos\practica1\tallergit>git status
+On branch juan_viteri<-en la rama creada juan_viteri
+se muestra los cambis que aun no se han guardado con un commit ->Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   1.commit/sandwich.txt<-aquí esta el archivo modificado (en la consola aparece en rojo por lo que no esta adicionado)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        1.commit/juan_viteri.txt.txt<-y este es este mismo archivo que aun no se guarda con un git add
+
+no changes added to commit (use "git add" and/or "git commit -a")
+------------------------------O------------------------------------
+C:\Users\Udenar\trabajos\practica1\tallergit>git add 1.commit/sandwich.txt
+C:\Users\Udenar\trabajos\practica1\tallergit>git status
+On branch juan_viteri
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   1.commit/sandwich.txt<-aquí esta el archivo modificado (en la consola aparece en verde por lo que el archivo si esta adicionado)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        1.commit/juan_viteri.txt.txt
+------------------------------O------------------------------------
+C:\Users\Udenar\trabajos\practica1\tallergit>git commit -m "Agrego mi sandwich.txt".
+[juan_viteri 2f277a6] Agrego mi sandwich.txt.
+ 1 file changed, 4 insertions(+)
+
+C:\Users\Udenar\trabajos\practica1\tallergit>git status
+On branch juan_viteri
+(aquí no aparece el archivo porque ya no esta en la staging área por lo que el commit fue exitoso)
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        1.commit/juan_viteri.txt.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+------------------------------O------------------------------------
+C:\Users\Udenar\trabajos\practica1\tallergit>git log
+commit 1bb19a169a4d16902ca4c207d0e1853b65f3d325 (HEAD -> juan_viteri)
+Author: juanfelipeviteriobando <juanfelipeviterimax@gmail.com>
+Date:   Tue Feb 18 12:21:40 2025 -0500
+
+    Agrego salsas.
+
+commit 2f277a663d3849f658080efa594dacb505f2201b
+Author: juanfelipeviteriobando <juanfelipeviterimax@gmail.com>
+Date:   Tue Feb 18 12:14:37 2025 -0500
+
+    Agrego mi sandwich.txt.
+
+commit fafdc7f0bd9a9a556a616c14ff783605909f3803 (origin/practica2025, origin/main, origin/HEAD, practica2025, main)
+Author: Franklin Jimenez <f.jimenezg@hotmail.com>
+Date:   Mon Feb 17 23:45:03 2025 -0500
+
+    cambio readme.md
+
+commit 5d6dc694d95afb33114a820339acfeeab38cc42a
+Author: Franklin Jimenez <f.jimenezg@hotmail.com>
+Date:   Mon Feb 17 23:39:56 2025 -0500
+
+    cambio de rama master a main en documentación
+
+commit 3f74d4d0db34f6f6fbcd9f8cfa4b157dccdd48d7
+Author: Franklin Jimenez <f.jimenezg@hotmail.com>
+Date:   Mon Feb 17 23:17:02 2025 -0500
+
+    primer commit
+este git log nos da información sobre los commits anteriores se mira que aparecen en orden de pila(los mas recientes están arriba)
+y el log nos da información sobre el identificador del commit, quien lo creo y cuando lo hizo además de clasificarse según la rama donde se hizo
+------------------------------O------------------------------------
+C:\Users\Udenar\trabajos\practica1\tallergit>git log --oneline
+1bb19a1 (HEAD -> juan_viteri) Agrego salsas.
+2f277a6 Agrego mi sandwich.txt.
+fafdc7f (origin/practica2025, origin/main, origin/HEAD, practica2025, main) cambio readme.md
+5d6dc69 cambio de rama master a main en documentación
+3f74d4d primer commit
+
+es una versión simplificada del anterior donde solo se mantienen una parte del identificador,el comentario y la rama
+
+C:\Users\Udenar\trabajos\practica1\tallergit>git log --stat
+commit 1bb19a169a4d16902ca4c207d0e1853b65f3d325 (HEAD -> juan_viteri)
+commit 1bb19a169a4d16902ca4c207d0e1853b65f3d325 (HEAD -> juan_viteri)
+Author: juanfelipeviteriobando <juanfelipeviterimax@gmail.com>
+Date:   Tue Feb 18 12:21:40 2025 -0500
+
+    Agrego salsas.
+
+ 1.commit/sandwich.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 2f277a663d3849f658080efa594dacb505f2201b
+Author: juanfelipeviteriobando <juanfelipeviterimax@gmail.com>
+Date:   Tue Feb 18 12:14:37 2025 -0500
+
+    Agrego mi sandwich.txt.
+
+ 1.commit/sandwich.txt | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+commit fafdc7f0bd9a9a556a616c14ff783605909f3803 (origin/practica2025, origin/main, origin/HEAD, practica2025, main)
+Author: Franklin Jimenez <f.jimenezg@hotmail.com>
+Date:   Mon Feb 17 23:45:03 2025 -0500
+
+    cambio readme.md
+
+ README.md | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 5d6dc694d95afb33114a820339acfeeab38cc42a
+Author: Franklin Jimenez <f.jimenezg@hotmail.com>
+Date:   Mon Feb 17 23:39:56 2025 -0500
+
+    cambio de rama master a main en documentación
+
+ 2.branchs/README.md   | 16 ++++++++--------
+ 3.conflicts/README.md | 10 +++++-----
+ README.md             |  7 +++++--
+ 3 files changed, 18 insertions(+), 15 deletions(-)
+
+commit 3f74d4d0db34f6f6fbcd9f8cfa4b157dccdd48d7
+Author: Franklin Jimenez <f.jimenezg@hotmail.com>
+Date:   Mon Feb 17 23:17:02 2025 -0500
+
+    primer commit
+
+ .gitignore               |  2 ++
+ 1.commit/README.md       | 55 ++++++++++++++++++++++++++++++++++
+ 1.commit/sandwich.txt    |  4 +++
+ 2.branchs/README.md      | 78 ++++++++++++++++++++++++++++++++++++++++++++++++
+ 2.branchs/pizza.txt      |  3 ++
+ 3.conflicts/README.md    | 48 +++++++++++++++++++++++++++++
+ 3.conflicts/milanesa.txt |  2 ++
+ README.md                | 54 +++++++++++++++++++++++++++++++++
+ 8 files changed, 246 insertions(+)
+(END)
+es una versión con mas contenido que la original que dice que archivos se modificaron y que tanto lo hicieron
+
+
