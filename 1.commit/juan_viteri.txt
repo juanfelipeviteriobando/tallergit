@@ -144,4 +144,256 @@ Date:   Mon Feb 17 23:17:02 2025 -0500
 (END)
 es una versión con mas contenido que la original que dice que archivos se modificaron y que tanto lo hicieron
 
+------------------------------O------------------------------------
+C:\Users\Udenar\trabajos\practica1\tallergit>git status
+On branch juan_viteri
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        1.commit/juan_viteri.txt
+        1.commit/sandwich2.txt
+        "h\357\200\276"
 
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\Udenar\trabajos\practica1\tallergit>git add 1.commit/sandwich2.txt
+
+C:\Users\Udenar\trabajos\practica1\tallergit>git status
+On branch juan_viteri
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   1.commit/sandwich2.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        1.commit/juan_viteri.txt
+        "h\357\200\276"
+
+
+C:\Users\Udenar\trabajos\practica1\tallergit>git add 1.commit/juan_viteri.txt
+
+C:\Users\Udenar\trabajos\practica1\tallergit>git status
+On branch juan_viteri
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   1.commit/juan_viteri.txt
+        new file:   1.commit/sandwich2.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        "h\357\200\276"
+
+
+C:\Users\Udenar\trabajos\practica1\tallergit>git status
+On branch juan_viteri
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   1.commit/juan_viteri.txt
+        new file:   1.commit/sandwich2.txt
+
+
+C:\Users\Udenar\trabajos\practica1\tallergit>git commit -m "Agrego mi 2 sandwich.txt".
+[juan_viteri 0f54327] Agrego mi 2 sandwich.txt.
+ 2 files changed, 157 insertions(+)
+ create mode 100644 1.commit/juan_viteri.txt
+ create mode 100644 1.commit/sandwich2.txt
+
+C:\Users\Udenar\trabajos\practica1\tallergit>git log --oneline
+0f54327 (HEAD -> juan_viteri) Agrego mi 2 sandwich.txt.
+1bb19a1 Agrego salsas.
+2f277a6 Agrego mi sandwich.txt.
+fafdc7f (origin/practica2025, origin/main, origin/HEAD, practica2025, main) cambio readme.md
+5d6dc69 cambio de rama master a main en documentación
+3f74d4d primer commit
+
+C:\Users\Udenar\trabajos\practica1\tallergit>git reset --soft 1bb19a1
+
+C:\Users\Udenar\trabajos\practica1\tallergit>git log --oneline
+1bb19a1 (HEAD -> juan_viteri) Agrego salsas.
+2f277a6 Agrego mi sandwich.txt.
+fafdc7f (origin/practica2025, origin/main, origin/HEAD, practica2025, main) cambio readme.md
+5d6dc69 cambio de rama master a main en documentación
+3f74d4d primer commit
+
+C:\Users\Udenar\trabajos\practica1\tallergit>git status
+On branch juan_viteri
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   1.commit/juan_viteri.txt
+        new file:   1.commit/sandwich2.txt
+
+
+C:\Users\Udenar\trabajos\practica1\tallergit>git status
+On branch juan_viteri
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   1.commit/juan_viteri.txt
+        new file:   1.commit/sandwich2.txt
+
+
+C:\Users\Udenar\trabajos\practica1\tallergit>git mv sandwich2.txt sandwich2_feo.txt
+fatal: bad source, source=sandwich2.txt, destination=sandwich2_feo.txt
+
+C:\Users\Udenar\trabajos\practica1\tallergit>git status
+On branch juan_viteri
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   1.commit/juan_viteri.txt
+        new file:   1.commit/sandwich2.txt
+
+
+C:\Users\Udenar\trabajos\practica1\tallergit>git mv sandwich2.txt sandwich2_feo.txt
+fatal: bad source, source=sandwich2.txt, destination=sandwich2_feo.txt
+
+C:\Users\Udenar\trabajos\practica1\tallergit>git mv 1.commit/sandwich2.txt 1.commit/sandwich2_feo.txt
+
+C:\Users\Udenar\trabajos\practica1\tallergit>git status
+On branch juan_viteri
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   1.commit/juan_viteri.txt
+        new file:   1.commit/sandwich2_feo.txt
+
+
+C:\Users\Udenar\trabajos\practica1\tallergit>git commit -m "Agrego mi 2 sandwich veo que esta feo y lo llamo sandwich2_feo.txt".
+[juan_viteri 0f11948] Agrego mi 2 sandwich veo que esta feo y lo llamo sandwich2_feo.txt.
+ 2 files changed, 157 insertions(+)
+ create mode 100644 1.commit/juan_viteri.txt
+ create mode 100644 1.commit/sandwich2_feo.txt
+
+C:\Users\Udenar\trabajos\practica1\tallergit>git status
+On branch juan_viteri
+nothing to commit, working tree clean
+
+C:\Users\Udenar\trabajos\practica1\tallergit>git log
+commit 0f11948def350e96c8b444bf6bddea3ea61c7309 (HEAD -> juan_viteri)
+Author: juanfelipeviteriobando <juanfelipeviterimax@gmail.com>
+Date:   Tue Feb 18 12:53:11 2025 -0500
+
+    Agrego mi 2 sandwich veo que esta feo y lo llamo sandwich2_feo.txt.
+
+commit 1bb19a169a4d16902ca4c207d0e1853b65f3d325
+Author: juanfelipeviteriobando <juanfelipeviterimax@gmail.com>
+Date:   Tue Feb 18 12:21:40 2025 -0500
+
+    Agrego salsas.
+
+commit 2f277a663d3849f658080efa594dacb505f2201b
+Author: juanfelipeviteriobando <juanfelipeviterimax@gmail.com>
+Date:   Tue Feb 18 12:14:37 2025 -0500
+
+    Agrego mi sandwich.txt.
+
+commit fafdc7f0bd9a9a556a616c14ff783605909f3803 (origin/practica2025, origin/main, origin/HEAD, practica2025, main)
+Author: Franklin Jimenez <f.jimenezg@hotmail.com>
+Date:   Mon Feb 17 23:45:03 2025 -0500
+
+    cambio readme.md
+
+commit 5d6dc694d95afb33114a820339acfeeab38cc42a
+Author: Franklin Jimenez <f.jimenezg@hotmail.com>
+Date:   Mon Feb 17 23:39:56 2025 -0500
+
+    cambio de rama master a main en documentación
+
+:
+
+C:\Users\Udenar\trabajos\practica1\tallergit>git rm 1.commit/sandwich2_feo.txt
+rm '1.commit/sandwich2_feo.txt'
+
+C:\Users\Udenar\trabajos\practica1\tallergit>git status
+On branch juan_viteri
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    1.commit/sandwich2_feo.txt
+
+
+C:\Users\Udenar\trabajos\practica1\tallergit>git log
+commit 0f11948def350e96c8b444bf6bddea3ea61c7309 (HEAD -> juan_viteri)
+Author: juanfelipeviteriobando <juanfelipeviterimax@gmail.com>
+Date:   Tue Feb 18 12:53:11 2025 -0500
+
+    Agrego mi 2 sandwich veo que esta feo y lo llamo sandwich2_feo.txt.
+
+commit 1bb19a169a4d16902ca4c207d0e1853b65f3d325
+Author: juanfelipeviteriobando <juanfelipeviterimax@gmail.com>
+Date:   Tue Feb 18 12:21:40 2025 -0500
+
+    Agrego salsas.
+
+commit 2f277a663d3849f658080efa594dacb505f2201b
+Author: juanfelipeviteriobando <juanfelipeviterimax@gmail.com>
+Date:   Tue Feb 18 12:14:37 2025 -0500
+
+    Agrego mi sandwich.txt.
+
+commit fafdc7f0bd9a9a556a616c14ff783605909f3803 (origin/practica2025, origin/main, origin/HEAD, practica2025, main)
+Author: Franklin Jimenez <f.jimenezg@hotmail.com>
+Date:   Mon Feb 17 23:45:03 2025 -0500
+
+    cambio readme.md
+
+commit 5d6dc694d95afb33114a820339acfeeab38cc42a
+Author: Franklin Jimenez <f.jimenezg@hotmail.com>
+Date:   Mon Feb 17 23:39:56 2025 -0500
+
+    cambio de rama master a main en documentación
+
+
+C:\Users\Udenar\trabajos\practica1\tallergit>git status
+On branch juan_viteri
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    1.commit/sandwich2_feo.txt
+
+
+C:\Users\Udenar\trabajos\practica1\tallergit>git commit -m "borro mi 2 sandwich".
+[juan_viteri 7641166] borro mi 2 sandwich.
+ 1 file changed, 10 deletions(-)
+ delete mode 100644 1.commit/sandwich2_feo.txt
+
+C:\Users\Udenar\trabajos\practica1\tallergit>git log --oneline
+7641166 (HEAD -> juan_viteri) borro mi 2 sandwich.
+0f11948 Agrego mi 2 sandwich veo que esta feo y lo llamo sandwich2_feo.txt.
+1bb19a1 Agrego salsas.
+2f277a6 Agrego mi sandwich.txt.
+fafdc7f (origin/practica2025, origin/main, origin/HEAD, practica2025, main) cambio readme.md
+5d6dc69 cambio de rama master a main en documentación
+3f74d4d primer commit
+
+C:\Users\Udenar\trabajos\practica1\tallergit>git status
+On branch juan_viteri
+nothing to commit, working tree clean
+
+C:\Users\Udenar\trabajos\practica1\tallergit>git log --stat
+commit 764116665599b6fc1e4c520dfe5b812b07a9712f (HEAD -> juan_viteri)
+Author: juanfelipeviteriobando <juanfelipeviterimax@gmail.com>
+Date:   Tue Feb 18 13:00:45 2025 -0500
+
+    borro mi 2 sandwich.
+
+ 1.commit/sandwich2_feo.txt | 10 ----------
+ 1 file changed, 10 deletions(-)
+
+commit 0f11948def350e96c8b444bf6bddea3ea61c7309
+Author: juanfelipeviteriobando <juanfelipeviterimax@gmail.com>
+Date:   Tue Feb 18 12:53:11 2025 -0500
+
+    Agrego mi 2 sandwich veo que esta feo y lo llamo sandwich2_feo.txt.
+
+ 1.commit/juan_viteri.txt   | 147 +++++++++++++++++++++++++++++++++++++++++++++
+ 1.commit/sandwich2_feo.txt |  10 +++
+ 2 files changed, 157 insertions(+)
+
+commit 1bb19a169a4d16902ca4c207d0e1853b65f3d325
+Author: juanfelipeviteriobando <juanfelipeviterimax@gmail.com>
+Date:   Tue Feb 18 12:21:40 2025 -0500
+
+    Agrego salsas.
+
+ 1.commit/sandwich.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 2f277a663d3849f658080efa594dacb505f2201b
+Author: juanfelipeviteriobando <juanfelipeviterimax@gmail.com>
+
+C:\Users\Udenar\trabajos\practica1\tallergit>
