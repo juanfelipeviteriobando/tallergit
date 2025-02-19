@@ -1,0 +1,19 @@
+respuestas
+1.un branch es una linea de desarrollo indepediente que permite ailar el desarrollo del trabajo del flujo principal 
+siendo asi como una copia que se puede afectar sin dañar el flujo original
+2.los branches son utiles para poder experimentar,corregir errores,agregar nuevas caracteristicas sin preocuparse
+por dañar el codigo principal, Además, facilitan el trabajo colaborativo al permitir a diferentes personas trabajar en diferentes características al mismo tiempo.
+3.Para crear una branch en Git, se utiliza el comando:"git branch <nombre_de_la_branch>"
+4.Para cambiar a una branch específica, usamos:"git checkout <nombre_de_la_branch>"
+5.Para eliminar una branch después de haber fusionado sus cambios y si ya no se necesita, se usa:"git branch -d <nombre_de_la_branch>"
+6.Para crear una branch y cambiar inmediatamente a ella, se usa:"git checkout -b <nombre_de_la_branch>"
+7.Un merge es el proceso de combinar los cambios de una branch en otra. Por lo general, 
+se fusionan los cambios de una branch secundaria de vuelta a la branch principal
+8.Para realizar un merge, primero nos aseguramos de estar en la branch de destino y luego ejecutamos:
+"git merge <nombre_de_la_otra_branch>"
+9.Un tag en Git es una referencia a un punto específico en la historia del repositorio. 
+Se utiliza generalmente para marcar versiones específicas de un software, como versiones estables.
+10. Para crear un tag en Git, se usa:"git tag <nombre_del_tag>"
+
+practica
+#1
