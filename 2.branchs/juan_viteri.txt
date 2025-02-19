@@ -125,6 +125,7 @@ Merge branch 'anana'
 #
 # Lines starting with '#' will be ignored, and an empty message aborts
 # the commit.           
+1,1 All</trabajos universidad 9 semestre/modelos de computacion/practica1/tallergit/.git/MERGE_MSG" [unix] 6L, 247B
 
 F:\trabajos universidad\trabajos universidad 9 semestre\modelos de computacion\practica1\tallergit>git merge anana
 Auto-merging 2.branchs/pizza.txt
@@ -132,4 +133,30 @@ Merge made by the 'ort' strategy.
  2.branchs/pizza.txt | 1 +
  1 file changed, 1 insertion(+)     
 #15
-                                                              ~                                                                                                                       .git/MERGE_MSG [unix] (16:42 19/02/2025)                                                                         1,1 All</trabajos universidad 9 semestre/modelos de computacion/practica1/tallergit/.git/MERGE_MSG" [unix] 6L, 247B
+F:\trabajos universidad\trabajos universidad 9 semestre\modelos de computacion\practica1\tallergit>git graph
+*   c21dfe2 (HEAD -> main) Merge branch Please enter a commit message to explain why this merge is necessary se hace merge con la linea anana para convinar la pizza
+|\
+| * 06896a7 (anana) agrego la anana
+* | 50c0d70 agrego la cebolla
+|/
+| * 02bbd62 (experimento) agrego el oregano
+| * ddc44d9 agrego la albahaca
+|/
+| * 46d188c (origin/juan_viteri, juan_viteri) subo la practica
+| * 79347d2 subo el juan_viteri.
+| * 7641166 borro mi 2 sandwich.
+| * 0f11948 Agrego mi 2 sandwich veo que esta feo y lo llamo sandwich2_feo.txt.
+| * 1bb19a1 Agrego salsas.
+| * 2f277a6 Agrego mi sandwich.txt.
+|/
+* fafdc7f (origin/practica2025, origin/main, origin/HEAD) cambio readme.md
+* 5d6dc69 cambio de rama master a main en documentación
+* 3f74d4d primer commit
+
+#aqui se puede ver claramente como se convinan las ramas 
+y en un solo merge que funciona como un commit pero con lo escrito en la seccion aparte de cuando se hizo el merge
+#16
+F:\trabajos universidad\trabajos universidad 9 semestre\modelos de computacion\practica1\tallergit>git branch --merged
+  anana
+* main
+#17
