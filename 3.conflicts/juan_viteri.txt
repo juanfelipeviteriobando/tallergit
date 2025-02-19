@@ -29,7 +29,7 @@ Switched to a new branch 'bife'
 #8
 F:\trabajos universidad\trabajos universidad 9 semestre\modelos de computacion\practica1\tallergit>git checkout bife
 Already on 'bife'
-#9
+#9 y 10
 
 F:\trabajos universidad\trabajos universidad 9 semestre\modelos de computacion\practica1\tallergit>git diff main suprema
 diff --git a/3.conflicts/juan_viteri.txt b/3.conflicts/juan_viteri.txt
@@ -63,5 +63,99 @@ index 5255304..1c57c4d 100644
 +pollo
 \ No newline at end of file
 
+
 F:\trabajos universidad\trabajos universidad 9 semestre\modelos de computacion\practica1\tallergit>git diff main bife
-#aqui se observa las modificaciones hechas en la rama suprema aunque en la rama bife no aparece nada por la falta de un commit anterior
+diff --git a/3.conflicts/juan_viteri.txt b/3.conflicts/juan_viteri.txt
+new file mode 100644
+index 0000000..869e34d
+--- /dev/null
++++ b/3.conflicts/juan_viteri.txt
+@@ -0,0 +1,67 @@
++respuestas^M
++1.Un conflicto en Git ocurre cuando dos branches han modificado la misma parte de un archivo de manera diferente^M
++, y Git no puede decidir automáticamente cuál versión mantener.^M
++no es nesesariamente malo si se rebisa y corrige de maneraadecuada pero si no puede generar errores graves o que simplemente no se pueda hacer el merge correctamente^M
++2.se puede evitar haciendo commits y merge constantes para no generar diferencias significativas aunque tambien es importante la comunicacion entre los programadores ^M
++y revisar de antemano para asi tener pleno conocimiento de que se cambio y que errores podria generar^M
++^M
++practica^M
+......
+\ No newline at end of file
+diff --git a/3.conflicts/milanesa.txt b/3.conflicts/milanesa.txt
+index 5255304..1712737 100644
+--- a/3.conflicts/milanesa.txt
++++ b/3.conflicts/milanesa.txt
+@@ -1,2 +1,2 @@
+ pan rallado
+-lomo
+\ No newline at end of file
++bife
+\ No newline at end of file
+(END)#aqui se observa las modificaciones hechas en la rama suprema y en la rama bife
+#11
+F:\trabajos universidad\trabajos universidad 9 semestre\modelos de computacion\practica1\tallergit>git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+F:\trabajos universidad\trabajos universidad 9 semestre\modelos de computacion\practica1\tallergit>git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+#se observa que el staging area esta vacio
+#12
+F:\trabajos universidad\trabajos universidad 9 semestre\modelos de computacion\practica1\tallergit>git merge bife
+Updating 01d5bee..6c2d64b
+Fast-forward
+ 3.conflicts/juan_viteri.txt | 67 +++++++++++++++++++++++++++++++++++++++++++++
+ 3.conflicts/milanesa.txt    |  2 +-
+ 2 files changed, 68 insertions(+), 1 deletion(-)
+ create mode 100644 3.conflicts/juan_viteri.txt
+#aparentemente el merge si funciono
+#13
+F:\trabajos universidad\trabajos universidad 9 semestre\modelos de computacion\practica1\tallergit>git merge suprema
+Auto-merging 3.conflicts/juan_viteri.txt
+CONFLICT (add/add): Merge conflict in 3.conflicts/juan_viteri.txt
+Auto-merging 3.conflicts/milanesa.txt
+CONFLICT (content): Merge conflict in 3.conflicts/milanesa.txt
+Automatic merge failed; fix conflicts and then commit the result.
+#el merge no funciono y se genero un conflicto en el cual se solicita solucionar los conflictos
+#14
+F:\trabajos universidad\trabajos universidad 9 semestre\modelos de computacion\practica1\tallergit>git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both added:      3.conflicts/juan_viteri.txt
+        both modified:   3.conflicts/milanesa.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+#se observa claramente cuales son los archivos que no se pudieron hacer merge por los conflictos generados
+#15
+pan rallado
+<<<<<<< HEAD
+bife
+=======
+pollo
+>>>>>>> suprema
+#el sistema muestra el conflicto separando las seccione diferentes y utilizando los indicadores para saber que rama causo el conflicto 
+y hasta donde abarca el mismo
+#16
+
+F:\trabajos universidad\trabajos universidad 9 semestre\modelos de computacion\practica1\tallergit>git merge --abort
+#17
+F:\trabajos universidad\trabajos universidad 9 semestre\modelos de computacion\practica1\tallergit>git merge suprema
+Auto-merging 3.conflicts/juan_viteri.txt
+CONFLICT (add/add): Merge conflict in 3.conflicts/juan_viteri.txt
+Auto-merging 3.conflicts/milanesa.txt
+CONFLICT (content): Merge conflict in 3.conflicts/milanesa.txt
+Automatic merge failed; fix conflicts and then commit the result.
+#18
+
