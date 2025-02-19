@@ -1,0 +1,14 @@
+respuestas
+1.Un conflicto en Git ocurre cuando dos branches han modificado la misma parte de un archivo de manera diferente
+, y Git no puede decidir automáticamente cuál versión mantener.
+no es nesesariamente malo si se rebisa y corrige de maneraadecuada pero si no puede generar errores graves o que simplemente no se pueda hacer el merge correctamente
+2.se puede evitar haciendo commits y merge constantes para no generar diferencias significativas aunque tambien es importante la comunicacion entre los programadores 
+y revisar de antemano para asi tener pleno conocimiento de que se cambio y que errores podria generar
+
+practica
+#2
+F:\trabajos universidad\trabajos universidad 9 semestre\modelos de computacion\practica1\tallergit>git checkout -b suprema
+Switched to a new branch 'suprema'
+#3
+F:\trabajos universidad\trabajos universidad 9 semestre\modelos de computacion\practica1\tallergit>git checkout suprema
+Already on 'suprema'
