@@ -1,0 +1,67 @@
+respuestas
+1.Un conflicto en Git ocurre cuando dos branches han modificado la misma parte de un archivo de manera diferente
+, y Git no puede decidir automáticamente cuál versión mantener.
+no es nesesariamente malo si se rebisa y corrige de maneraadecuada pero si no puede generar errores graves o que simplemente no se pueda hacer el merge correctamente
+2.se puede evitar haciendo commits y merge constantes para no generar diferencias significativas aunque tambien es importante la comunicacion entre los programadores 
+y revisar de antemano para asi tener pleno conocimiento de que se cambio y que errores podria generar
+
+practica
+#2
+F:\trabajos universidad\trabajos universidad 9 semestre\modelos de computacion\practica1\tallergit>git checkout -b suprema
+Switched to a new branch 'suprema'
+#3
+F:\trabajos universidad\trabajos universidad 9 semestre\modelos de computacion\practica1\tallergit>git checkout suprema
+Already on 'suprema'
+#4 y 5
+F:\trabajos universidad\trabajos universidad 9 semestre\modelos de computacion\practica1\tallergit>git add -A
+
+F:\trabajos universidad\trabajos universidad 9 semestre\modelos de computacion\practica1\tallergit>git commit -am "Cambio de lomo a pollo"
+[suprema 3036ef6] Cambio de lomo a pollo
+ 2 files changed, 15 insertions(+), 1 deletion(-)
+ create mode 100644 3.conflicts/juan_viteri.txt
+#6
+F:\trabajos universidad\trabajos universidad 9 semestre\modelos de computacion\practica1\tallergit>git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+#7
+F:\trabajos universidad\trabajos universidad 9 semestre\modelos de computacion\practica1\tallergit>git checkout -b bife
+Switched to a new branch 'bife'
+#8
+F:\trabajos universidad\trabajos universidad 9 semestre\modelos de computacion\practica1\tallergit>git checkout bife
+Already on 'bife'
+#9
+
+F:\trabajos universidad\trabajos universidad 9 semestre\modelos de computacion\practica1\tallergit>git diff main suprema
+diff --git a/3.conflicts/juan_viteri.txt b/3.conflicts/juan_viteri.txt
+new file mode 100644
+index 0000000..3fc692a
+--- /dev/null
++++ b/3.conflicts/juan_viteri.txt
+@@ -0,0 +1,14 @@
++respuestas^M
++1.Un conflicto en Git ocurre cuando dos branches han modificado la misma parte de un archivo de manera diferente^M
++, y Git no puede decidir automáticamente cuál versión mantener.^M
++no es nesesariamente malo si se rebisa y corrige de maneraadecuada pero si no puede generar errores graves o que simplemente no se pueda hacer el merge correctamente^M
++2.se puede evitar haciendo commits y merge constantes para no generar diferencias significativas aunque tambien es importante la comunicacion entre los programadores ^M
++y revisar de antemano para asi tener pleno conocimiento de que se cambio y que errores podria generar^M
++^M
++practica^M
++#2^M
++F:\trabajos universidad\trabajos universidad 9 semestre\modelos de computacion\practica1\tallergit>git checkout -b suprema^M
++Switched to a new branch 'suprema'^M
++#3^M
++F:\trabajos universidad\trabajos universidad 9 semestre\modelos de computacion\practica1\tallergit>git checkout suprema^M
++Already on 'suprema'^M
+diff --git a/3.conflicts/milanesa.txt b/3.conflicts/milanesa.txt
+index 5255304..1c57c4d 100644
+--- a/3.conflicts/milanesa.txt
++++ b/3.conflicts/milanesa.txt
+@@ -1,2 +1,2 @@
+ pan rallado
+-lomo
+\ No newline at end of file
++pollo
+\ No newline at end of file
+
+F:\trabajos universidad\trabajos universidad 9 semestre\modelos de computacion\practica1\tallergit>git diff main bife
+#aqui se observa las modificaciones hechas en la rama suprema aunque en la rama bife no aparece nada por la falta de un commit anterior
