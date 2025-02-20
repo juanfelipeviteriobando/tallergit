@@ -158,4 +158,15 @@ Auto-merging 3.conflicts/milanesa.txt
 CONFLICT (content): Merge conflict in 3.conflicts/milanesa.txt
 Automatic merge failed; fix conflicts and then commit the result.
 #18
+pan rallado
+bife
+pollo
+#se decidio dejar las 2 carnes y se va a hacer un commit
+F:\trabajos universidad\trabajos universidad 9 semestre\modelos de computacion\practica1\tallergit>git add -A
+
+F:\trabajos universidad\trabajos universidad 9 semestre\modelos de computacion\practica1\tallergit>git commit -m "se dejan las 2 carnes para tener 2 milanesas"
+[main 37feb86] se dejan las 2 carnes para tener 2 milanesas
+
+F:\trabajos universidad\trabajos universidad 9 semestre\modelos de computacion\practica1\tallergit>git merge suprema
+Already up to date.
 
